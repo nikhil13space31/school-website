@@ -7,10 +7,14 @@ const connectDB = async () => {
       console.log('Backend will pause database features until a connection string is provided.');
       return;
     }
-    console.log('✅ Successfully connected to MongoDB Atlas Cloud Database.');
+    try {
+      await mongoose.connect(process.env.MONGO_URI);
+      console.log('✅ Successfully connected to MongoDB Atlas Cloud Database.');
+    } catch (dbErr) {
+      console.error('❌ MongoDB Connection Error:', dbErr.message);
+    }
   } catch (error) {
-    console.error('❌ MongoDB Connection Error:', error.message);
-    // Removed process.exit(1) to avoid 502 Bad Gateway on cold-starts
+    console.error('❌ Initial DB setup Error:', error.message);
   }
 };
 
