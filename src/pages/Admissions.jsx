@@ -9,7 +9,7 @@ const Admissions = () => {
     e.preventDefault();
     setStatus('Submitting...');
     try {
-      const response = await fetch('http://localhost:5000/api/apply', {
+      const response = await fetch('https://srikoti-school-api.onrender.com/api/apply', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),

@@ -11,8 +11,8 @@ const AdminDashboard = () => {
     const fetchData = async () => {
       try {
         const [appRes, contRes] = await Promise.all([
-          fetch('http://localhost:5000/api/admin/applications'),
-          fetch('http://localhost:5000/api/admin/contacts')
+          fetch('https://srikoti-school-api.onrender.com/api/admin/applications'),
+          fetch('https://srikoti-school-api.onrender.com/api/admin/contacts')
         ]);
         
         const appData = await appRes.json();
