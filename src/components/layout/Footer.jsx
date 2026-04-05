@@ -1,4 +1,5 @@
-import { School, MapPin, Phone, Mail } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { School, MapPin, Phone, Mail, Lock } from 'lucide-react';
 import './Footer.css';
 
 const Footer = () => {
@@ -21,10 +22,11 @@ const Footer = () => {
         <div className="footer-links animate-fade-in-up delay-100">
           <h3 className="text-surface mb-4">Quick Links</h3>
           <ul>
-            <li><a href="/about">About Us</a></li>
-            <li><a href="/admissions">Admissions</a></li>
-            <li><a href="/academics">Academics</a></li>
-            <li><a href="/student-life">Student Life</a></li>
+            <li><Link to="/">Home</Link></li>
+            <li><Link to="/about">About Us</Link></li>
+            <li><Link to="/admissions">Admissions</Link></li>
+            <li><Link to="/student-life">Student Life</Link></li>
+            <li><Link to="/contact">Contact Us</Link></li>
           </ul>
         </div>
         
@@ -66,8 +68,13 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="footer-bottom text-center text-sm text-text-light py-4 border-t border-white-10">
-        <p>&copy; {new Date().getFullYear()} SRI KOTI E.M. HIGH SCHOOL. All rights reserved.</p>
+      <div className="footer-bottom py-4 border-t border-white-10">
+        <div className="container flex justify-between items-center text-sm text-text-light">
+          <p>&copy; {new Date().getFullYear()} SRI KOTI E.M. HIGH SCHOOL. All rights reserved.</p>
+          <Link to="/admin" className="flex items-center gap-1 opacity-60 hover:opacity-100 transition-opacity">
+            <Lock size={14} /> Staff Login
+          </Link>
+        </div>
       </div>
     </footer>
   );
