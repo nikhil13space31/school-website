@@ -49,7 +49,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <h4 className="font-bold">Our Campus</h4>
-                  <p className="text-text font-medium">123 Education Lane, Learning Village</p>
+                  <p className="text-text font-medium">Main Road, Kajuluru, Kakinada,<br />Andhra Pradesh - 533468</p>
                 </div>
               </li>
               <li className="flex items-center gap-4">
@@ -58,7 +58,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <h4 className="font-bold">Phone</h4>
-                  <p className="text-text font-medium">+1 (555) 123-4567</p>
+                  <p className="text-text font-medium">9949982532</p>
                 </div>
               </li>
               <li className="flex items-center gap-4">
@@ -67,7 +67,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <h4 className="font-bold">Email</h4>
-                  <p className="text-text font-medium">admissions@srikoti.edu</p>
+                  <p className="text-text font-medium">srikotiinstitutions@gmail.com</p>
                 </div>
               </li>
             </ul>
