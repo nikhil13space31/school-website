@@ -1,0 +1,25 @@
+.app-background {
+  position: fixed;
+  top: -5%; /* Prevent white borders when blurring */
+  left: -5%;
+  width: 110vw;
+  height: 110vh;
+  z-index: -1;
+  background-image: url('/school.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  will-change: filter;
+  /* adding a transition can make it slightly smoother but might lag if scrolling fast.
+     So we rely on React rendering for now or passive event listeners */
+}
+
+.bg-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* Using a more pronounced grey semi-transparent color */
+  background-color: rgba(148, 163, 184, 0.85); 
+}

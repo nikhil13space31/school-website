@@ -1,0 +1,134 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 1.5rem 0;
+  transition: all var(--transition-normal);
+}
+
+.navbar-scrolled {
+  padding: 1rem 0;
+  box-shadow: var(--shadow-md);
+}
+
+/* Base states before scrolled */
+.navbar:not(.navbar-scrolled) {
+  background: transparent;
+  color: var(--color-surface); /* Assuming most headers have dark hero sections */
+}
+
+/* For pages that don't have dark hero sections, we might need a specific class later, but for now we'll assume dark background heroes */
+.navbar.navbar-scrolled {
+  color: var(--color-surface);
+}
+
+.navbar-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+
+
+.logo-img {
+  height: 64px;
+  width: auto;
+  object-fit: contain;
+  border-radius: var(--radius-sm);
+}
+
+.desktop-menu {
+  display: none;
+  align-items: center;
+  gap: 2rem;
+}
+
+@media(min-width: 768px) {
+  .desktop-menu {
+    display: flex;
+  }
+}
+
+.desktop-menu a {
+  font-weight: 500;
+  position: relative;
+  padding: 0.5rem 0;
+}
+
+.desktop-menu a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--color-accent);
+  transition: width var(--transition-fast);
+}
+
+.desktop-menu a:hover::after,
+.desktop-menu a.active::after {
+  width: 100%;
+}
+
+.ml-auto {
+  margin-left: 2rem;
+}
+
+.mobile-toggle {
+  display: block;
+  background: transparent;
+  color: inherit;
+  z-index: 1001; /* Above mobile menu */
+}
+
+@media(min-width: 768px) {
+  .mobile-toggle {
+    display: none;
+  }
+}
+
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-20px);
+  transition: all var(--transition-normal);
+  z-index: 999;
+}
+
+.mobile-menu.open {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.mobile-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  text-align: center;
+  font-size: 1.5rem;
+  font-family: var(--font-heading);
+  font-weight: 600;
+}
