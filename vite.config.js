@@ -3,5 +3,6 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
-  base: '/school-website/', // Ensure this matches your repo name!
+  base: '/', // Custom domain serves from root, no subfolder prefix needed
+
 })
