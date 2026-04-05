@@ -36,7 +36,13 @@ const Navbar = () => {
           <Link to="/about" className={location.pathname === '/about' ? 'active' : ''}>About</Link>
           <Link to="/admissions" className={location.pathname === '/admissions' ? 'active' : ''}>Admissions</Link>
           <Link to="/contact" className={location.pathname === '/contact' ? 'active' : ''}>Contact</Link>
-          <button className="btn btn-primary ml-auto">Apply Now</button>
+          <Link 
+            to="/admissions" 
+            className="btn btn-primary ml-auto"
+            style={{ textDecoration: 'none' }}
+          >
+            Apply Now
+          </Link>
         </nav>
 
         {/* Mobile Toggle */}
@@ -53,7 +59,14 @@ const Navbar = () => {
           <Link to="/about" onClick={closeMenu}>About</Link>
           <Link to="/admissions" onClick={closeMenu}>Admissions</Link>
           <Link to="/contact" onClick={closeMenu}>Contact</Link>
-          <button className="btn btn-primary mt-4" onClick={closeMenu}>Apply Now</button>
+          <Link 
+            to="/admissions" 
+            className="btn btn-primary mt-4" 
+            onClick={closeMenu}
+            style={{ textDecoration: 'none', textAlign: 'center' }}
+          >
+            Apply Now
+          </Link>
         </nav>
       </div>
     </header>
