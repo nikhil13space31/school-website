@@ -27,7 +27,7 @@ const About = () => {
           {/* Image fills container at a consistent height */}
           <div style={{ borderRadius: '0.75rem', overflow: 'hidden', boxShadow: '0 8px 32px rgba(0,0,0,0.18)', height: '360px' }}>
             <img
-              src={`${import.meta.env.BASE_URL}history.jpeg`}
+              src={`${import.meta.env.BASE_URL}history.png`}
               alt="Campus History"
               style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
             />
