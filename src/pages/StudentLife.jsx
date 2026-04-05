@@ -23,7 +23,7 @@ const StudentLife = () => {
             </div>
             <div>
               <img 
-                src="/culturals.jpeg" 
+                src={`${import.meta.env.BASE_URL}culturals.jpeg`} 
                 alt="Student Culturals" 
                 className="rounded-lg shadow-md w-full h-auto object-cover"
                 style={{ aspectRatio: '1391 / 680' }}

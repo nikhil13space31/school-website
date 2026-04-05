@@ -22,7 +22,7 @@ const Navbar = () => {
     <header className={`navbar ${scrolled ? 'navbar-scrolled glass-dark' : ''}`}>
       <div className="container navbar-container">
         <Link to="/" className="navbar-logo" onClick={closeMenu} style={{ alignItems: 'center' }}>
-          <img src="/logo.png" alt="SRI KOTI E.M. HIGH SCHOOL Logo" className="logo-img" />
+          <img src={`${import.meta.env.BASE_URL}logo.png`} alt="SRI KOTI E.M. HIGH SCHOOL Logo" className="logo-img" />
           <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
             <span style={{ lineHeight: 1 }}>SRI KOTI E.M. HIGH SCHOOL</span>
             <span style={{ fontFamily: '"Times New Roman", Times, serif', fontStyle: 'italic', fontSize: '0.85rem', fontWeight: 400, opacity: 0.9, marginTop: '2px' }}>Learning for Life</span>

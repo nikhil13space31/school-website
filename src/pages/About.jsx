@@ -32,9 +32,9 @@ const About = () => {
           </div>
           
           <div>
-            <img 
-              src="/history.jpeg" 
-              alt="Campus History" 
+              <img 
+                src={`${import.meta.env.BASE_URL}history.jpeg`} 
+                alt="Campus History" 
               className="rounded-lg shadow-md w-full h-auto object-cover"
               style={{ aspectRatio: '1391 / 680' }}
             />

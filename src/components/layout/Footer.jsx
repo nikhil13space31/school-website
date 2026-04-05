@@ -7,7 +7,7 @@ const Footer = () => {
       <div className="container footer-grid grid-3">
         <div className="footer-brand animate-fade-in-up">
           <div className="footer-logo mb-4" style={{ alignItems: 'center' }}>
-            <img src="/logo.png" alt="SRI KOTI E.M. HIGH SCHOOL Logo" className="logo-img-footer" />
+            <img src={`${import.meta.env.BASE_URL}logo.png`} alt="SRI KOTI E.M. HIGH SCHOOL Logo" className="logo-img-footer" />
             <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
               <span className="font-heading text-xl" style={{ lineHeight: 1.1 }}>SRI KOTI E.M. HIGH SCHOOL</span>
               <span style={{ fontFamily: '"Times New Roman", Times, serif', fontStyle: 'italic', fontSize: '1rem', fontWeight: 400, opacity: 0.9, marginTop: '2px' }}>Learning for Life</span>

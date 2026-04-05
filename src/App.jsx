@@ -26,7 +26,10 @@ function App() {
     <Router basename={import.meta.env.BASE_URL}>
       <div 
         className="app-background"
-        style={{ filter: `blur(${blurValue}px)` }}
+        style={{ 
+          filter: `blur(${blurValue}px)`,
+          backgroundImage: `url(${import.meta.env.BASE_URL}school.png)`
+        }}
       >
         <div className="bg-overlay"></div>
       </div>
