@@ -5,23 +5,31 @@ const AdminDashboard = () => {
   const [applications, setApplications] = useState([]);
   const [contacts, setContacts] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
   const [activeTab, setActiveTab] = useState('applications');
 
   useEffect(() => {
     const fetchData = async () => {
+      setLoading(true);
+      setError(null);
       try {
         const [appRes, contRes] = await Promise.all([
           fetch('https://srikoti-school-api.onrender.com/api/admin/applications'),
           fetch('https://srikoti-school-api.onrender.com/api/admin/contacts')
         ]);
         
+        if (!appRes.ok || !contRes.ok) {
+          throw new Error('Server responded with an error. The backend might still be waking up.');
+        }
+
         const appData = await appRes.json();
         const contData = await contRes.json();
         
-        setApplications(appData);
-        setContacts(contData);
+        setApplications(appData || []);
+        setContacts(contData || []);
       } catch (err) {
         console.error('Failed to fetch admin data:', err);
+        setError(err.message || 'Failed to connect to the cloud server.');
       } finally {
         setLoading(false);
       }
@@ -31,7 +39,30 @@ const AdminDashboard = () => {
   }, []);
 
   if (loading) {
-    return <div className="pt-32 text-center pb-32"><h2>Loading Secure Dashboard...</h2></div>;
+    return (
+      <div className="pt-32 text-center pb-32">
+        <h2 className="animate-pulse">Connecting to Cloud Database...</h2>
+        <p className="mt-4 text-text-light opacity-70">Note: The free-tier server takes about 30-60 seconds to "wake up" after inactivity.</p>
+        <div className="mt-8 flex justify-center">
+            <div className="w-12 h-12 border-4 border-primary border-t-transparent rounded-full animate-spin"></div>
+        </div>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="pt-32 text-center pb-32 container">
+        <h2 className="text-red-600">⚠️ Connection Error</h2>
+        <p className="mt-4 text-lg">{error}</p>
+        <button 
+          onClick={() => window.location.reload()} 
+          className="btn btn-primary mt-8"
+        >
+          Try Again
+        </button>
+      </div>
+    );
   }
 
   return (
