@@ -38,8 +38,13 @@ const Navbar = () => {
           <Link to="/contact" className={location.pathname === '/contact' ? 'active' : ''}>Contact</Link>
           <Link 
             to="/admissions" 
-            className="btn btn-primary ml-auto"
-            style={{ textDecoration: 'none' }}
+            className="btn btn-primary"
+            style={{ 
+              textDecoration: 'none', 
+              padding: '0.8rem 2rem', 
+              marginLeft: '2rem',
+              minWidth: 'fit-content'
+            }}
           >
             Apply Now
           </Link>
@@ -61,9 +66,14 @@ const Navbar = () => {
           <Link to="/contact" onClick={closeMenu}>Contact</Link>
           <Link 
             to="/admissions" 
-            className="btn btn-primary mt-4" 
+            className="btn btn-primary" 
             onClick={closeMenu}
-            style={{ textDecoration: 'none', textAlign: 'center' }}
+            style={{ 
+              textDecoration: 'none', 
+              padding: '1rem 2.5rem',
+              marginTop: '1.5rem',
+              display: 'flex'
+            }}
           >
             Apply Now
           </Link>
