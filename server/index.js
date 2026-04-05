@@ -15,6 +15,9 @@ app.use(express.json());
 
 // --- ROUTES ---
 
+// Health Check
+app.get('/', (req, res) => res.json({ status: 'Online', message: 'SRI KOTI School API is operational.' }));
+
 // 1. Submit an Admission Application
 app.post('/api/apply', async (req, res) => {
   try {
